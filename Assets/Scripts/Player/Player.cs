@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rbJogador;
     public float velocidade = 5;
+    public float velocidadeCorrida = 10;
     public float forcaPulo = 2;
     public Vector2 atrito = new Vector2(.1f, 0);
 
@@ -20,11 +21,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rbJogador.velocity = new Vector2(-velocidade, rbJogador.velocity.y);
+            rbJogador.velocity = new Vector2(Input.GetKey(KeyCode.LeftControl) ? -velocidadeCorrida : -velocidade, rbJogador.velocity.y);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rbJogador.velocity = new Vector2(velocidade, rbJogador.velocity.y);
+            rbJogador.velocity = new Vector2(Input.GetKey(KeyCode.LeftControl) ? velocidadeCorrida : velocidade, rbJogador.velocity.y);
         }
 
         if (rbJogador.velocity.x > 0)
