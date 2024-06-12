@@ -272,6 +272,12 @@ MonoBehaviour:
   velocidadeCorrida: 21
   forcaPulo: 15
   atrito: {x: 0.1, y: 0}
+  escalaCorridaX: 1.75
+  escalaCorridaY: 0.75
+  escalaPuloY: 1.5
+  escalaPuloX: 0.5
+  animationDur: 0.3
+  cstmEase: 27
 --- !u!1 &48307809
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +442,7 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.5
+  m_DeadZoneWidth: 0.25
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
