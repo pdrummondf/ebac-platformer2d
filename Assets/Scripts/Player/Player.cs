@@ -14,12 +14,15 @@ public class Player : MonoBehaviour
     public Vector2 atrito = new Vector2(.1f, 0);
     public float escalaCorridaX = 1.75f;
     public float escalaCorridaY = .75f;
+    public Ease cstmEaseCorrida = Ease.OutBack;
 
     [Header("config Animation")]
     public float escalaPuloY = 1.5f;
     public float escalaPuloX = .5f;
     public float animationDur = .3f;
     public Ease cstmEase = Ease.OutBack;
+
+    private bool _pouso = false;
 
 
     public void Update()
@@ -61,6 +64,8 @@ public class Player : MonoBehaviour
             DOTween.Kill(rbJogador.transform);
 
             HandleEscalaPulo();
+
+            _pouso = true;
         }
     }
 
@@ -74,13 +79,36 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            rbJogador.transform.DOScaleX(escalaCorridaX, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
-            rbJogador.transform.DOScaleY(escalaCorridaY, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
+            rbJogador.transform.DOScaleX(escalaCorridaX, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEaseCorrida);
+            rbJogador.transform.DOScaleY(escalaCorridaY, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEaseCorrida);
         }
         else
         {
             rbJogador.transform.localScale = Vector2.one;
             DOTween.Kill(rbJogador.transform);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Equals("Square"))
+        {
+            Debug.Log(collision.gameObject.name);
+
+            if (_pouso)
+            {
+                _pouso = false;
+                rbJogador.transform.localScale = Vector2.one;
+
+                DOTween.Kill(rbJogador.transform);
+                HandlePouso();
+            }
+        }
+    }
+
+    private void HandlePouso()
+    {
+        rbJogador.transform.DOScaleY(escalaPuloX, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
+        rbJogador.transform.DOScaleX(escalaPuloY, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
     }
 }
