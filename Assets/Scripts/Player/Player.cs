@@ -22,6 +22,10 @@ public class Player : MonoBehaviour
     public float animationDur = .3f;
     public Ease cstmEase = Ease.OutBack;
 
+    [Header("Animation Player")]
+    public string triggerRun = "Run";
+    public Animator animatorPlayer;
+
     private bool _pouso = false;
 
 
@@ -36,12 +40,26 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rbJogador.velocity = new Vector2(Input.GetKey(KeyCode.LeftControl) ? -velocidadeCorrida : -velocidade, rbJogador.velocity.y);
-            HandleEscalaCorrida();
+            if (rbJogador.transform.localScale.x != -1)
+            {
+                rbJogador.transform.DOScaleX(-1, .1f);
+            }
+            animatorPlayer.SetBool(triggerRun, true);
+            //HandleEscalaCorrida();
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rbJogador.velocity = new Vector2(Input.GetKey(KeyCode.LeftControl) ? velocidadeCorrida : velocidade, rbJogador.velocity.y);
-            HandleEscalaCorrida();
+            if (rbJogador.transform.localScale.x != 1)
+            {
+                rbJogador.transform.DOScaleX(1, .1f);
+            }
+            animatorPlayer.SetBool(triggerRun, true);
+            //HandleEscalaCorrida();
+        }
+        else
+        {
+            animatorPlayer.SetBool(triggerRun, false);
         }
 
         if (rbJogador.velocity.x > 0)
@@ -59,13 +77,20 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rbJogador.velocity = Vector2.up * forcaPulo;
-            rbJogador.transform.localScale = Vector2.one;
+            if (rbJogador.transform.localScale.x != -1)
+            {
+                rbJogador.transform.DOScaleX(1, .1f);
+            }
+            if (rbJogador.transform.localScale.x != 1)
+            {
+                rbJogador.transform.DOScaleX(-1, .1f);
+            }
 
-            DOTween.Kill(rbJogador.transform);
+            //DOTween.Kill(rbJogador.transform);
 
-            HandleEscalaPulo();
+            //HandleEscalaPulo();
 
-            _pouso = true;
+            //_pouso = true;
         }
     }
 
