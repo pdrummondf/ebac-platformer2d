@@ -282,7 +282,9 @@ MonoBehaviour:
   animationDur: 0.3
   cstmEase: 27
   triggerRun: Run
+  triggerDeath: Death
   animatorPlayer: {fileID: 1179754713}
+  healthBase: {fileID: 2729684}
 --- !u!114 &2729684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,8 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLife: 10
-  destroyOnKill: 1
-  delayOnKill: 1
+  destroyOnKill: 0
+  delayOnKill: 0
   _flashColor: {fileID: 301573907}
 --- !u!1 &8517153
 GameObject:
@@ -811,6 +813,19 @@ MonoBehaviour:
   - {fileID: 1296981907}
   color: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
   duration: 0.1
+--- !u!114 &301573908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301573905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd922c03c53f5f541910f255ccf229e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2729683}
 --- !u!1 &327057607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5013,7 +5028,9 @@ MonoBehaviour:
   damage: 5
   animatorAttack: {fileID: 819252751}
   gatilhoAtacar: Attack
+  gatilhoMorrer: Death
   healthBase: {fileID: 2010837247}
+  tempoParaDestruir: 1
 --- !u!4 &2010837244
 Transform:
   m_ObjectHideFlags: 0
@@ -5089,7 +5106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLife: 10
-  destroyOnKill: 1
+  destroyOnKill: 0
   delayOnKill: 0
   _flashColor: {fileID: 0}
 --- !u!114 &2010837248
@@ -5350,7 +5367,9 @@ MonoBehaviour:
   damage: 1
   animatorAttack: {fileID: 0}
   gatilhoAtacar: 
+  gatilhoMorrer: Death
   healthBase: {fileID: 0}
+  tempoParaDestruir: 1
 --- !u!212 &2059046013 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4058282757918593861, guid: 3de838754c767a446a5473969062a84e, type: 3}

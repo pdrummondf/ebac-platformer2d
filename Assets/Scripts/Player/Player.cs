@@ -24,10 +24,26 @@ public class Player : MonoBehaviour
 
     [Header("Animation Player")]
     public string triggerRun = "Run";
+    public string triggerDeath = "Death";
     public Animator animatorPlayer;
 
     private bool _pouso = false;
 
+    public HealthBase healthBase;
+
+    private void Awake()
+    {
+        if (healthBase != null)
+        {
+            healthBase.onKill += OnPlayerKill;
+        }
+    }
+
+    private void OnPlayerKill()
+    {
+        healthBase.onKill -= OnPlayerKill;
+        animatorPlayer.SetTrigger(triggerDeath);
+    }
 
     public void Update()
     {
@@ -135,5 +151,10 @@ public class Player : MonoBehaviour
     {
         rbJogador.transform.DOScaleY(escalaPuloX, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
         rbJogador.transform.DOScaleX(escalaPuloY, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
+    }
+
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 }
