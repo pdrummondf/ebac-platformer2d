@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using DG.Tweening;
 
 public class HealthBase : MonoBehaviour
 {
+    public Action onKill;
     public int startLife = 10;
     public bool destroyOnKill = false;
     public float delayOnKill = 0f;
@@ -12,6 +14,7 @@ public class HealthBase : MonoBehaviour
     private int _currentLife;
     private bool isDead = false;
 
+    [SerializeField]private FlashColor _flashColor;
 
     public void Init()
     {
@@ -21,6 +24,10 @@ public class HealthBase : MonoBehaviour
     private void Awake()
     {
         Init();
+        if (_flashColor == null)
+        {
+            _flashColor = GetComponent<FlashColor>();
+        }
     }
 
     public void Damage(int damage)
@@ -33,6 +40,11 @@ public class HealthBase : MonoBehaviour
         {
             Kill();
         }
+
+        if (_flashColor != null)
+        {
+            _flashColor.Flash();
+        }
     }
 
     public void Kill()
@@ -41,15 +53,17 @@ public class HealthBase : MonoBehaviour
 
         if (destroyOnKill)
         {
-            var rbBody = gameObject.GetComponent<Rigidbody2D>();
+            //var rbBody = gameObject.GetComponent<Rigidbody2D>();
 
-            if (rbBody != null)
-            {
-                //Debug.Log(rbBody.gameObject.name);
-                rbBody.transform.DOScaleY(.1f, .3f).SetEase(Ease.OutBack);
-            }
+            //if (rbBody != null)
+            //{
+            //    //Debug.Log(rbBody.gameObject.name);
+            //    rbBody.transform.DOScaleY(.1f, .3f).SetEase(Ease.OutBack);
+            //}
 
             Destroy(gameObject,delayOnKill);
         }
+
+        onKill?.Invoke();
     }
 }
