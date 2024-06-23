@@ -1450,11 +1450,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.924088
+      value: 30.980003
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.8256917
+      value: -11.5
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2835,11 +2835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.144087
+      value: 44.2
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.8256917
+      value: -11.5
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3814,6 +3814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 0
+  textoCollected: {fileID: 710287589}
 --- !u!4 &1407195430
 Transform:
   m_ObjectHideFlags: 0
@@ -4527,11 +4528,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.655912
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5656916
+      value: -11.5
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4666,11 +4667,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.854088
+      value: 37.910004
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.8256917
+      value: -11.5
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5388,11 +5389,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.805912
+      value: -25.65
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5656916
+      value: -11.5
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5565,11 +5566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.655912
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5656916
+      value: -11.5
       objectReference: {fileID: 0}
     - target: {fileID: 1037964886822398819, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5607,5 +5608,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 1761720332298573458, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: textoCollected
+      value: 
+      objectReference: {fileID: 710287589}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
