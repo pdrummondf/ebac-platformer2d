@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ca0b6b94b5e4a4f9824b4da7840f4d, type: 3}
+  m_Name: SO_Player_01
+  m_EditorClassIdentifier: 
+  velocidade: 20
+  velocidadeCorrida: 30
+  forcaPulo: 15
+  atrito: {x: 0.3, y: 0}
+  escalaCorridaX: 1.75
+  escalaCorridaY: 0.75
+  cstmEaseCorrida: 27
+  escalaPuloY: 1.5
+  escalaPuloX: 0.5
+  animationDur: 0.3
+  cstmEase: 27
+  triggerRun: Run
+  triggerDeath: Death
