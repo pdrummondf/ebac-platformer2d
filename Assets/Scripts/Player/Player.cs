@@ -7,24 +7,9 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rbJogador;
 
-    [Header("Config Velocidade")]
-    public float velocidade = 5;
-    public float velocidadeCorrida = 10;
-    public float forcaPulo = 2;
-    public Vector2 atrito = new Vector2(.1f, 0);
-    public float escalaCorridaX = 1.75f;
-    public float escalaCorridaY = .75f;
-    public Ease cstmEaseCorrida = Ease.OutBack;
+    [Header("Setup")]
+    public SOPlayerSetup soPlayerSetup;
 
-    [Header("config Animation")]
-    public float escalaPuloY = 1.5f;
-    public float escalaPuloX = .5f;
-    public float animationDur = .3f;
-    public Ease cstmEase = Ease.OutBack;
-
-    [Header("Animation Player")]
-    public string triggerRun = "Run";
-    public string triggerDeath = "Death";
     public Animator animatorPlayer;
 
     private bool _pouso = false;
@@ -42,7 +27,7 @@ public class Player : MonoBehaviour
     private void OnPlayerKill()
     {
         healthBase.onKill -= OnPlayerKill;
-        animatorPlayer.SetTrigger(triggerDeath);
+        animatorPlayer.SetTrigger(soPlayerSetup.triggerDeath);
     }
 
     public void Update()
@@ -55,36 +40,36 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rbJogador.velocity = new Vector2(Input.GetKey(KeyCode.LeftControl) ? -velocidadeCorrida : -velocidade, rbJogador.velocity.y);
+            rbJogador.velocity = new Vector2(Input.GetKey(KeyCode.LeftControl) ? -soPlayerSetup.velocidadeCorrida : -soPlayerSetup.velocidade, rbJogador.velocity.y);
             if (rbJogador.transform.localScale.x != -1)
             {
                 rbJogador.transform.DOScaleX(-1, .1f);
             }
-            animatorPlayer.SetBool(triggerRun, true);
+            animatorPlayer.SetBool(soPlayerSetup.triggerRun, true);
             //HandleEscalaCorrida();
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rbJogador.velocity = new Vector2(Input.GetKey(KeyCode.LeftControl) ? velocidadeCorrida : velocidade, rbJogador.velocity.y);
+            rbJogador.velocity = new Vector2(Input.GetKey(KeyCode.LeftControl) ? soPlayerSetup.velocidadeCorrida : soPlayerSetup.velocidade, rbJogador.velocity.y);
             if (rbJogador.transform.localScale.x != 1)
             {
                 rbJogador.transform.DOScaleX(1, .1f);
             }
-            animatorPlayer.SetBool(triggerRun, true);
+            animatorPlayer.SetBool(soPlayerSetup.triggerRun, true);
             //HandleEscalaCorrida();
         }
         else
         {
-            animatorPlayer.SetBool(triggerRun, false);
+            animatorPlayer.SetBool(soPlayerSetup.triggerRun, false);
         }
 
         if (rbJogador.velocity.x > 0)
         {
-            rbJogador.velocity -= atrito;
+            rbJogador.velocity -= soPlayerSetup.atrito;
         }
         else if (rbJogador.velocity.x < 0)
         {
-            rbJogador.velocity += atrito;
+            rbJogador.velocity += soPlayerSetup.atrito;
         }
     }
 
@@ -92,7 +77,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rbJogador.velocity = Vector2.up * forcaPulo;
+            rbJogador.velocity = Vector2.up * soPlayerSetup.forcaPulo;
             if (rbJogador.transform.localScale.x != -1)
             {
                 rbJogador.transform.DOScaleX(1, .1f);
@@ -112,16 +97,16 @@ public class Player : MonoBehaviour
 
     private void HandleEscalaPulo()
     {
-        rbJogador.transform.DOScaleY(escalaPuloY, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
-        rbJogador.transform.DOScaleX(escalaPuloX, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
+        rbJogador.transform.DOScaleY(soPlayerSetup.escalaPuloY, soPlayerSetup.animationDur).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.cstmEase);
+        rbJogador.transform.DOScaleX(soPlayerSetup.escalaPuloX, soPlayerSetup.animationDur).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.cstmEase);
     }
 
     private void HandleEscalaCorrida()
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            rbJogador.transform.DOScaleX(escalaCorridaX, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEaseCorrida);
-            rbJogador.transform.DOScaleY(escalaCorridaY, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEaseCorrida);
+            rbJogador.transform.DOScaleX(soPlayerSetup.escalaCorridaX, soPlayerSetup.animationDur).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.cstmEaseCorrida);
+            rbJogador.transform.DOScaleY(soPlayerSetup.escalaCorridaY, soPlayerSetup.animationDur).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.cstmEaseCorrida);
         }
         else
         {
@@ -149,8 +134,8 @@ public class Player : MonoBehaviour
 
     private void HandlePouso()
     {
-        rbJogador.transform.DOScaleY(escalaPuloX, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
-        rbJogador.transform.DOScaleX(escalaPuloY, animationDur).SetLoops(2, LoopType.Yoyo).SetEase(cstmEase);
+        rbJogador.transform.DOScaleY(soPlayerSetup.escalaPuloX, soPlayerSetup.animationDur).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.cstmEase);
+        rbJogador.transform.DOScaleX(soPlayerSetup.escalaPuloY, soPlayerSetup.animationDur).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.cstmEase);
     }
 
     public void DestroyMe()
