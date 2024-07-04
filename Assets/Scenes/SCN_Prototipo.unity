@@ -1313,6 +1313,11 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7274142433465299202, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   m_PrefabInstance: {fileID: 1660407865}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &479267728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8709413344019175036, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+  m_PrefabInstance: {fileID: 1037964887735186099}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &538633716 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3971700845632200199, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
@@ -1545,6 +1550,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Coin (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1761720332298573458, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 5895695215285694344, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+    - target: {fileID: 3262273823251577434, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 618950182}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
 --- !u!4 &645317415 stripped
@@ -2243,6 +2256,63 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: -44.04895}
   m_SizeDelta: {x: 300, y: 88.097}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &900542624
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1310306865313805118, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_Name
+      value: PFB_ParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560247437247427579, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
 --- !u!1 &916267353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,6 +3015,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Coin (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1761720332298573458, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 5895695215285694344, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+    - target: {fileID: 3262273823251577434, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 618950182}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
 --- !u!95 &1179754713 stripped
@@ -4700,6 +4778,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Coin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1761720332298573458, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 5895695215285694344, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+    - target: {fileID: 3262273823251577434, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 618950182}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
 --- !u!1 &1683050673
@@ -4839,6 +4925,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Coin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1761720332298573458, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 5895695215285694344, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+    - target: {fileID: 3262273823251577434, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 618950182}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
 --- !u!1001 &1760285537
@@ -5561,6 +5655,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Coin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1761720332298573458, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 5895695215285694344, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+    - target: {fileID: 3262273823251577434, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 618950182}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
 --- !u!212 &2064422849 stripped
@@ -5801,8 +5903,20 @@ PrefabInstance:
       value: PFB_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 1761720332298573458, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: graphicItem
+      value: 
+      objectReference: {fileID: 479267728}
+    - target: {fileID: 1761720332298573458, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 5895695215285694344, guid: 5e70c5b33ea8ca443b4f648e735667e5, type: 3}
+    - target: {fileID: 1761720332298573458, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
       propertyPath: textoCollected
       value: 
       objectReference: {fileID: 710287589}
+    - target: {fileID: 3262273823251577434, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 618950182}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f5e962dd78ec64aa43dbee9cc57cb3, type: 3}
