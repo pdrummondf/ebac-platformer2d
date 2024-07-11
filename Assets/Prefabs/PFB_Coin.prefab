@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   particleSystem: {fileID: 3262273823251577434}
-  tempoEsconder: 3
+  tempoEsconder: 1
   graphicItem: {fileID: 8709413344019175036}
 --- !u!58 &1135733146965966147
 CircleCollider2D:
