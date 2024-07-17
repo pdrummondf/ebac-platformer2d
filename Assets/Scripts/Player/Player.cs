@@ -16,12 +16,28 @@ public class Player : MonoBehaviour
 
     public HealthBase healthBase;
 
+    [Header("Jump Setup")]
+    public Collider2D collider2d;
+    public float distToGround;
+    public float spaceToGroud = .1f;
+    public ParticleSystem puloVFX;
+
     private void Awake()
     {
         if (healthBase != null)
         {
             healthBase.onKill += OnPlayerKill;
         }
+
+        if (collider2d != null)
+        {
+            distToGround = collider2d.bounds.extents.y;
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.Raycast(transform.position,-Vector2.up, distToGround + spaceToGroud);
     }
 
     private void OnPlayerKill()
@@ -75,7 +91,7 @@ public class Player : MonoBehaviour
 
     private void HandlePulo()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rbJogador.velocity = Vector2.up * soPlayerSetup.forcaPulo;
             if (rbJogador.transform.localScale.x != -1)
@@ -87,11 +103,21 @@ public class Player : MonoBehaviour
                 rbJogador.transform.DOScaleX(-1, .1f);
             }
 
+            PlayPuloVFX();
+
             //DOTween.Kill(rbJogador.transform);
 
             //HandleEscalaPulo();
 
             //_pouso = true;
+        }
+    }
+
+    private void PlayPuloVFX()
+    {
+        if (puloVFX != null)
+        {
+            puloVFX.Play();
         }
     }
 
