@@ -9,6 +9,8 @@ public class ItemCollectableBase : MonoBehaviour
     public float tempoEsconder = 3f;
     public GameObject graphicItem;
 
+    [Header("Sons")]
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -44,6 +46,10 @@ public class ItemCollectableBase : MonoBehaviour
         if (particleSystem != null)
         {
             particleSystem.Play();
+        }
+        if (audioSource != null)
+        {
+            audioSource.Play();
         }
     }
 }
