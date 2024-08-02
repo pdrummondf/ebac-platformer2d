@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public float distToGround;
     public float spaceToGroud = .1f;
     public ParticleSystem puloVFX;
+    public AudioSource audioSourceJump;
 
     private void Awake()
     {
@@ -118,6 +119,7 @@ public class Player : MonoBehaviour
         if (puloVFX != null)
         {
             puloVFX.Play();
+            audioSourceJump.Play();
         }
     }
 
